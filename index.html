@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-gray-900 flex justify-center pt-28 text-gray-300">
+
+    <div class="">
+
+        <header>
+            <h1 class="text-center m-5">Password Generator</h1>
+            
+            <!-- GENERATED PASSWORD CONTAINER -->
+            <div class="bg-gray-800 flex justify-between gap-20 p-4">
+                <div>PxswSFssw78!</div>
+                <div>Copy icon</div>
+            </div>
+        </header>
+    
+            <!-- Main container -->
+        <main class="bg-gray-800 mt-5">
+
+            <section class="p-4">
+                <div class="flex justify-between">
+                    <h2>Character Length</h2>
+                    <div>10</div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-full">
+                        <input type="range" name="range" min="1" max="20" class="w-full h-2 bg-green-300 appearance-none"/>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="p-4">
+                <div class="flex gap-5">
+                    <input type="checkbox" name="" id="">
+                    <div>Include Uppercase Letters</div> 
+                </div>  
+                <div class="flex gap-5">
+                    <input type="checkbox" name="" id="">
+                    <div>Include Lowercase Letters</div> 
+                </div>  
+                <div class="flex gap-5">
+                    <input type="checkbox" name="" id="">
+                    <div>Include Numbers</div> 
+                </div>  
+                <div class="flex gap-5">
+                    <input type="checkbox" name="" id="">
+                    <div>Include Symbols</div> 
+                </div>  
+            </section>
+
+            <section class="flex gap-24 p-4 justify-between bg-black mx-4">
+                <div>
+                    <h3>STRENGHT</h3>
+                </div>
+                <div class="flex gap-2">
+                    <h3>MEDIUM</h3>
+                    <div>||</div>
+                    <div>||</div>
+                    <div>||</div>
+                    <div>||</div>
+                </div> 
+            </section>
+
+            <section class="py-6 px-4">
+                <div class="flex justify-center bg-green-300 hover:bg-green-500 cursor-pointer text-black p-4">
+                    <button>Generate</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    
+</body>
+</html>
