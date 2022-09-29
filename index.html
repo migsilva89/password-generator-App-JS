@@ -16,7 +16,7 @@
             
             <!-- GENERATED PASSWORD CONTAINER -->
             <div class="bg-gray-800 flex justify-between gap-20 p-4">
-                <div>PxswSFssw78!</div>
+                <div id="password-result">PxswSFssw78!</div>
                 <div>Copy icon</div>
             </div>
         </header>
@@ -27,30 +27,30 @@
             <section class="p-4">
                 <div class="flex justify-between">
                     <h2>Character Length</h2>
-                    <div>10</div>
+                    <div id="range-result">10</div>
                 </div>
                 <div class="flex justify-center">
                     <div class="w-full">
-                        <input type="range" name="range" min="1" max="20" class="w-full h-2 bg-green-300 appearance-none"/>
+                        <input id="range-length" type="range" name="range" min="1" max="20" value="10" class="w-full h-2 bg-green-300 appearance-none"/>
                     </div>
                 </div>
             </section>
             
             <section class="p-4">
                 <div class="flex gap-5">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="Uppercase">
                     <div>Include Uppercase Letters</div> 
                 </div>  
                 <div class="flex gap-5">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="Lowercase">
                     <div>Include Lowercase Letters</div> 
                 </div>  
                 <div class="flex gap-5">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="Numbers">
                     <div>Include Numbers</div> 
                 </div>  
                 <div class="flex gap-5">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="Symbols">
                     <div>Include Symbols</div> 
                 </div>  
             </section>
@@ -70,12 +70,13 @@
 
             <section class="py-6 px-4">
                 <div class="flex justify-center bg-green-300 hover:bg-green-500 cursor-pointer text-black p-4">
-                    <button>Generate</button>
+                    <button id="generate-btn">Generate</button>
                 </div>
             </section>
 
         </main>
     </div>
     
+    <script src="index.js"></script>
 </body>
 </html>
