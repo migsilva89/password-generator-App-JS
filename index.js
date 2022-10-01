@@ -14,10 +14,11 @@ function getRange() {
 
 function getInfoForPasswordGenerator(){
 
-    var boxNumber = parseInt(checkWichBoxesAreChecked())
+    var boxNumber = parseInt(getCheckedBoxes())
 
+    //IF IS NUMBER IT GOES TROUHG SWITCH
     if(!isNaN(boxNumber)){
-        // console.log(boxNumber)
+        
     evaluatePassword()
     
         switch (boxNumber) {
@@ -86,26 +87,25 @@ function getInfoForPasswordGenerator(){
         var charactersLength = characters.length;
         passwordGenerator(characters, charactersLength)
 
+    // IF NOT 
     } else {
         passwordResult.innerHTML = "escolhe alguma opcao batata!"
     }   
-
 }
+
 
 function evaluatePassword() {
 
     var strenghtName = document.getElementById('strenght')
     var strenghtBgColor = document.querySelectorAll('.box')
 
-    // console.log(getRange(), checkWichBoxesAreChecked().length)
-
-    if(checkWichBoxesAreChecked().length > 3 && getRange() >= 8){
+    if(getCheckedBoxes().length > 3 && getRange() >= 8){
         strenghtName.innerHTML = "VERY STORNG"
         strenghtBgColor.forEach(element => {
             element.classList.add('bg-yellow-500')
         });
 
-    } else if (checkWichBoxesAreChecked().length >= 3 && getRange() >= 6){
+    } else if (getCheckedBoxes().length >= 3 && getRange() >= 6){
         strenghtName.innerHTML = "STRONG"
 
         for (let i = 0; i < 3; i++) {
@@ -114,7 +114,7 @@ function evaluatePassword() {
         }
         strenghtBgColor[3].classList.remove('bg-yellow-500')
 
-    } else if (checkWichBoxesAreChecked().length <= 2 && getRange() >= 5){
+    } else if (getCheckedBoxes().length <= 2 && getRange() >= 5){
         strenghtName.innerHTML = "MEDIUM"
 
         for (let i = 0; i < 3; i++) {
@@ -123,7 +123,7 @@ function evaluatePassword() {
         }
         strenghtBgColor[2].classList.remove('bg-yellow-500')
 
-    } else if (checkWichBoxesAreChecked().length <= 4 && getRange() <= 5 && getRange() >=4 ){
+    } else if (getCheckedBoxes().length <= 4 && getRange() <= 5 && getRange() >=4 ){
         strenghtName.innerHTML = "WEAK"
 
         for (let i = 0; i < 2; i++) {
@@ -142,6 +142,7 @@ function evaluatePassword() {
 }
 
 function passwordGenerator(characters, charactersLength){
+
     var length = getRange()
     var result = '';
 
@@ -151,7 +152,7 @@ function passwordGenerator(characters, charactersLength){
     passwordResult.innerHTML = result;
 }
 
-function checkWichBoxesAreChecked() {
+function getCheckedBoxes() {
     
     var checkedCheckBoxes = ''
     const checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
