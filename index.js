@@ -17,10 +17,8 @@ function getInfoForPasswordGenerator(){
     var boxNumber = parseInt(checkWichBoxesAreChecked())
 
     if(!isNaN(boxNumber)){
-        
-        evaluatePassword()
         // console.log(boxNumber)
-    
+    evaluatePassword()
         switch (boxNumber) {
             case 12:
                 characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
@@ -81,6 +79,8 @@ function getInfoForPasswordGenerator(){
             default:
                 break;
         }
+
+        evaluatePassword()
         
         var charactersLength = characters.length;
         passwordGenerator(characters, charactersLength)
@@ -89,7 +89,6 @@ function getInfoForPasswordGenerator(){
         passwordResult.innerHTML = "escolhe alguma opcao batata!"
     }   
 
-    
 }
 
 function evaluatePassword() {
