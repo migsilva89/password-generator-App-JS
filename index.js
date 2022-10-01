@@ -85,10 +85,59 @@ function getInfoForPasswordGenerator(){
 
     } else {
         passwordResult.innerHTML = "escolhe alguma opcao batata!"
-    }
-    
+    }   
+
+    evaluatePassword()
 }
 
+function evaluatePassword() {
+
+    var strenghtName = document.getElementById('strenght')
+    var strenghtBgColor = document.querySelectorAll('.box')
+
+    // console.log(getRange(), checkWichBoxesAreChecked().length)
+
+    if(checkWichBoxesAreChecked().length > 3 && getRange() >= 8){
+        strenghtName.innerHTML = "VERY STORNG"
+        strenghtBgColor.forEach(element => {
+            element.classList.add('bg-yellow-500')
+        });
+
+    } else if (checkWichBoxesAreChecked().length >= 3 && getRange() >= 6){
+        strenghtName.innerHTML = "STRONG"
+
+        for (let i = 0; i < 3; i++) {
+            const element = strenghtBgColor[i];
+            element.classList.add('bg-yellow-500')
+        }
+        strenghtBgColor[3].classList.remove('bg-yellow-500')
+
+    } else if (checkWichBoxesAreChecked().length <= 2 && getRange() >= 5){
+        strenghtName.innerHTML = "MEDIUM"
+
+        for (let i = 0; i < 3; i++) {
+            const element = strenghtBgColor[i];
+            element.classList.add('bg-yellow-500')
+        }
+        strenghtBgColor[2].classList.remove('bg-yellow-500')
+
+    } else if (checkWichBoxesAreChecked().length <= 2 && getRange() <= 5){
+        strenghtName.innerHTML = "WEAK"
+
+        for (let i = 0; i < 2; i++) {
+            const element = strenghtBgColor[i];
+            element.classList.add('bg-yellow-500')
+        }
+        strenghtBgColor[1].classList.remove('bg-yellow-500')
+
+    } else {
+        strenghtName.innerHTML = "VERY WEAK"
+        for (let i = 0; i < 4; i++) {
+            const element = strenghtBgColor[i];
+            element.classList.remove('bg-yellow-500')
+        }
+    }
+}
 
 function passwordGenerator(characters, charactersLength){
     var length = getRange()
