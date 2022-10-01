@@ -19,6 +19,7 @@ function getInfoForPasswordGenerator(){
     if(!isNaN(boxNumber)){
         // console.log(boxNumber)
     evaluatePassword()
+    
         switch (boxNumber) {
             case 12:
                 characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
@@ -122,7 +123,7 @@ function evaluatePassword() {
         }
         strenghtBgColor[2].classList.remove('bg-yellow-500')
 
-    } else if (checkWichBoxesAreChecked().length <= 2 && getRange() <= 5){
+    } else if (checkWichBoxesAreChecked().length <= 4 && getRange() <= 5 && getRange() >=4 ){
         strenghtName.innerHTML = "WEAK"
 
         for (let i = 0; i < 2; i++) {
