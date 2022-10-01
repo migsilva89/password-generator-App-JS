@@ -17,6 +17,8 @@ function getInfoForPasswordGenerator(){
     var boxNumber = parseInt(checkWichBoxesAreChecked())
 
     if(!isNaN(boxNumber)){
+        
+        evaluatePassword()
         // console.log(boxNumber)
     
         switch (boxNumber) {
@@ -87,7 +89,7 @@ function getInfoForPasswordGenerator(){
         passwordResult.innerHTML = "escolhe alguma opcao batata!"
     }   
 
-    evaluatePassword()
+    
 }
 
 function evaluatePassword() {
