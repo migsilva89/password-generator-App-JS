@@ -1,82 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkBlue: '#041721',
+              darkGreenBlue: '#1B4645',
+              orangeNor: '#F68800',
+              lightGreen: '#276967',
+              yellowNor: '#F98D24',
+            },
+          },
+        },
+      }
+    </script>
+
     <title>Document</title>
-</head>
-<body class="bg-gray-900 flex justify-center pt-28 text-gray-300">
-
+  </head>
+  <body
+    class="bg-darkBlue flex justify-center h-screen items-center text-gray-300"
+  >
     <div class="">
+      <header>
+        <h1 class="text-center m-5 font-bold tracking-wide text-xl">
+          Password Generator
+        </h1>
 
-        <header>
-            <h1 class="text-center m-5">Password Generator</h1>
-            
-            <!-- GENERATED PASSWORD CONTAINER -->
-            <div class="bg-gray-800 flex justify-center gap-20 p-4">
-                <div id="password-result">PxswSFssw78!</div>
-                <!-- <div>Copy icon</div> -->
+        <!-- GENERATED PASSWORD CONTAINER -->
+        <div class="bg-darkGreenBlue flex justify-center gap-20 p-4">
+          <div id="password-result">PxswSFssw78!</div>
+          <!-- <div>Copy icon</div> -->
+        </div>
+      </header>
+
+      <!-- Main container -->
+      <main class="bg-darkGreenBlue mt-5">
+        <section class="p-4">
+          <div class="flex justify-between">
+            <h2>Character Length</h2>
+            <div id="range-result">10</div>
+          </div>
+          <div class="flex justify-center">
+            <div class="w-full">
+              <input
+                id="range-length"
+                type="range"
+                name="range"
+                min="1"
+                max="20"
+                value="10"
+                class="w-full h-2 bg-darkBlue appearance-none"
+              />
             </div>
-        </header>
-    
-            <!-- Main container -->
-        <main class="bg-gray-800 mt-5">
+          </div>
+        </section>
 
-            <section class="p-4">
-                <div class="flex justify-between">
-                    <h2>Character Length</h2>
-                    <div id="range-result">10</div>
-                </div>
-                <div class="flex justify-center">
-                    <div class="w-full">
-                        <input id="range-length" type="range" name="range" min="1" max="20" value="10" class="w-full h-2 bg-green-300 appearance-none"/>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="p-4">
-                <div class="flex gap-5">
-                    <input type="checkbox" name="UpperCase" value="1">
-                    <div>Include Uppercase Letters</div> 
-                </div>  
-                <div class="flex gap-5">
-                    <input type="checkbox" name="LowerCase" value="2">
-                    <div>Include Lowercase Letters</div> 
-                </div>  
-                <div class="flex gap-5">
-                    <input type="checkbox" name="Numbers" value="3">
-                    <div>Include Numbers</div> 
-                </div>  
-                <div class="flex gap-5">
-                    <input type="checkbox" name="Symbols" value="4">
-                    <div>Include Symbols</div> 
-                </div>  
-            </section>
+        <section class="p-4">
+          <div class="flex gap-5">
+            <input type="checkbox" name="UpperCase" value="1" />
+            <div>Include Uppercase Letters</div>
+          </div>
+          <div class="flex gap-5">
+            <input type="checkbox" name="LowerCase" value="2" />
+            <div>Include Lowercase Letters</div>
+          </div>
+          <div class="flex gap-5">
+            <input type="checkbox" name="Numbers" value="3" />
+            <div>Include Numbers</div>
+          </div>
+          <div class="flex gap-5">
+            <input type="checkbox" name="Symbols" value="4" />
+            <div>Include Symbols</div>
+          </div>
+        </section>
 
-            <section class="flex gap-24 p-4 justify-between bg-black mx-4">
-                <div>
-                    <h3>STRENGHT</h3>
-                </div>
-                <div class="flex gap-2">
-                    <h3 id="strenght">??????</h3>
-                    <div class="border w-3 box"></div>
-                    <div class="border w-3 box"></div>
-                    <div class="border w-3 box"></div>
-                    <div class="border w-3 box"></div>
-                </div> 
-            </section>
+        <section class="flex gap-24 p-4 justify-between bg-darkBlue mx-4">
+          <div>
+            <h3>POWER</h3>
+          </div>
+          <div class="flex gap-2">
+            <h3 id="strenght">Very weak</h3>
+            <div class="border w-3 box"></div>
+            <div class="border w-3 box"></div>
+            <div class="border w-3 box"></div>
+            <div class="border w-3 box"></div>
+          </div>
+        </section>
 
-            <section class="py-6 px-4">
-                <div class="flex justify-center bg-green-300 hover:bg-green-500 cursor-pointer text-black p-4">
-                    <button id="generate-btn">Generate</button>
-                </div>
-            </section>
-
-        </main>
+        <section class="py-6 px-4">
+          <div
+            class="flex justify-center bg-purple-700 hover:bg-purple-500 cursor-pointer text-white font-bold p-4"
+          >
+            <button class="tracking-wide" id="generate-btn">Generate</button>
+          </div>
+        </section>
+      </main>
     </div>
-    
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
