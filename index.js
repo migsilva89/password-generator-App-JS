@@ -130,6 +130,7 @@ function evaluatePassword() {
     for (let i = 0; i < 2; i++) {
       const element = strenghtBgColor[i]
       strenghtBgColor[2].classList.remove('bg-purple-700')
+      strenghtBgColor[3].classList.remove('bg-purple-700')
       element.classList.add('bg-purple-700')
     }
     strenghtBgColor[1].classList.remove('bg-purple-700')
