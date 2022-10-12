@@ -5,7 +5,6 @@
 ### The challenge was to make a password generator with Javascript where we can:
 
 - Generate a password based on the inclusion options selected;
-- Copy a generated password to a computer clipboard;
 - Get a strength rating for the password;
 
 ## Built with
